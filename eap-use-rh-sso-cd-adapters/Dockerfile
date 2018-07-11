@@ -55,11 +55,11 @@ USER root
 # COPY repos/*.repo /etc/yum.repos.d/
 
 # Install required RPMs and ensure that the packages were installed
-RUN yum install -y --disablerepo=\* --enablerepo=jboss-rhel-os --enablerepo=jboss-rhel-rhscl python-requests python-enum34 PyYAML hostname rh-maven35 rh-mongodb32-mongo-java-driver postgresql-jdbc mysql-connector-java \
-    && yum clean all && \
-    rpm -q  python-requests python-enum34 PyYAML hostname rh-maven35 rh-mongodb32-mongo-java-driver postgresql-jdbc mysql-connector-java
+# RUN yum install -y --disablerepo=\* --enablerepo=jboss-rhel-os --enablerepo=jboss-rhel-rhscl python-requests python-enum34 PyYAML hostname rh-maven35 rh-mongodb32-mongo-java-driver postgresql-jdbc mysql-connector-java \
+#    && yum clean all && \
+#    rpm -q  python-requests python-enum34 PyYAML hostname rh-maven35 rh-mongodb32-mongo-java-driver postgresql-jdbc mysql-connector-java
 # Remove custom repo files
-RUN rm /etc/yum.repos.d/jboss-rhel-os.repo /etc/yum.repos.d/jboss-rhel-rhscl.repo
+# RUN rm /etc/yum.repos.d/jboss-rhel-os.repo /etc/yum.repos.d/jboss-rhel-rhscl.repo
 
 # Add all artifacts to the /tmp/artifacts
 # directory
