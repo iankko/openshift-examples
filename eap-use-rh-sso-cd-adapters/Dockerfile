@@ -52,7 +52,7 @@ EXPOSE 8443 8778
 USER root
 
 # Add custom repo files
-COPY repos/*.repo /etc/yum.repos.d/
+# COPY repos/*.repo /etc/yum.repos.d/
 
 # Install required RPMs and ensure that the packages were installed
 RUN yum install -y --disablerepo=\* --enablerepo=jboss-rhel-os --enablerepo=jboss-rhel-rhscl python-requests python-enum34 PyYAML hostname rh-maven35 rh-mongodb32-mongo-java-driver postgresql-jdbc mysql-connector-java \
@@ -63,19 +63,19 @@ RUN rm /etc/yum.repos.d/jboss-rhel-os.repo /etc/yum.repos.d/jboss-rhel-rhscl.rep
 
 # Add all artifacts to the /tmp/artifacts
 # directory
-COPY \
-    jolokia-jvm-1.5.0.redhat-1-agent.jar \
-    openshift-ping-common-1.2.1.Final-redhat-1.jar \
-    openshift-ping-dns-1.2.1.Final-redhat-1.jar \
-    openshift-ping-kube-1.2.1.Final-redhat-1.jar \
-    oauth-20100527.jar \
-    rh-sso-7.2.2-eap7-adapter.zip \
-    rh-sso-7.2.2-saml-eap7-adapter.zip \
-    hawkular-javaagent-1.0.1.Final-redhat-2-shaded.jar \
-    /tmp/artifacts/
+# COPY \
+#    jolokia-jvm-1.5.0.redhat-1-agent.jar \
+#    openshift-ping-common-1.2.1.Final-redhat-1.jar \
+#    openshift-ping-dns-1.2.1.Final-redhat-1.jar \
+#    openshift-ping-kube-1.2.1.Final-redhat-1.jar \
+#    oauth-20100527.jar \
+#    rh-sso-7.2.2-eap7-adapter.zip \
+#    rh-sso-7.2.2-saml-eap7-adapter.zip \
+#    hawkular-javaagent-1.0.1.Final-redhat-2-shaded.jar \
+#    /tmp/artifacts/
 
 # Add scripts used to configure the image
-COPY modules /tmp/scripts
+# COPY modules /tmp/scripts
 
 # Custom scripts
 USER root
