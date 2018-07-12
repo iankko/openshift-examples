@@ -1,4 +1,4 @@
-# Copyright 2018 Red Hat
+# Copyright 2017 Red Hat
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -75,106 +75,106 @@ USER root
 #    /tmp/artifacts/
 
 # Add scripts used to configure the image
-# COPY modules /tmp/scripts
+COPY ../modules /tmp/scripts
 
 # Custom scripts
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/os-java-run/install_as_root" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/os-java-run/install_as_root" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/dynamic-resources/install.sh" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/dynamic-resources/install.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/s2i-common/install.sh" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/s2i-common/install.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/java-alternatives/run.sh" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/java-alternatives/run.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/os-eap7-openshift/prepare.sh" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap7-openshift/prepare.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap7-openshift/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap7-openshift/configure.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-s2i/prepare.sh" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-s2i/prepare.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/os-java-jolokia/install_as_root" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/os-java-jolokia/install_as_root" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/jboss.eap.cd.jolokia/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/jboss.eap.cd.jolokia/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/jboss.eap.cd.openshift.modules/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/jboss.eap.cd.openshift.modules/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap7-ping/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap7-ping/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-launch/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-launch/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap7-launch/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap7-launch/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-node-name/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-node-name/configure.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/os-partition/install_as_root" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/os-partition/install_as_root" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-migration/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-migration/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/jboss.eap.cd.openshift.launch/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/jboss.eap.cd.openshift.launch/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/jboss.eap.cd.logging/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/jboss.eap.cd.logging/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-probes/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-probes/configure.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/jboss-maven/configure.sh" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/jboss-maven/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-db-drivers/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-db-drivers/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap70-sso/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap70-sso/configure.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/os-java-hawkular/install_as_root" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/os-java-hawkular/install_as_root" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/os-eap70-hawkular/install_as_root" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap70-hawkular/install_as_root" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-hawkular/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-hawkular/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-deployment-scanner/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-deployment-scanner/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/os-eap-extensions/configure.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/os-eap-extensions/configure.sh" ]
 
 USER 185
 RUN [ "bash", "-x", "/tmp/scripts/os-eap-sso/configure.sh" ]
 
-USER 185
-RUN [ "bash", "-x", "/tmp/scripts/openshift-layer/configure_layers.sh" ]
+#USER 185
+#RUN [ "bash", "-x", "/tmp/scripts/openshift-layer/configure_layers.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/openshift-passwd/configure_passwd.sh" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/openshift-passwd/configure_passwd.sh" ]
 
-USER root
-RUN [ "bash", "-x", "/tmp/scripts/os-logging/configure.sh" ]
+#USER root
+#RUN [ "bash", "-x", "/tmp/scripts/os-logging/configure.sh" ]
 
 USER root
 RUN rm -rf /tmp/scripts
-USER root
-RUN rm -rf /tmp/artifacts
+#USER root
+#RUN rm -rf /tmp/artifacts
 
 USER 185
 
